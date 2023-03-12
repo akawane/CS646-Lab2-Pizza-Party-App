@@ -42,22 +42,6 @@ class MainActivity : AppCompatActivity() {
         numPizzasTextView = findViewById(R.id.num_pizzas_text_view)
         howHungryRadioGroup = findViewById(R.id.hungry_radio_group)
 
-        numAttendEditText.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                ;
-            }
-
-            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                if (p0?.length == 1 && p0[0] == '0') {
-                    numAttendEditText.setText("")
-                }
-            }
-
-            override fun afterTextChanged(p0: Editable?) {
-                ;
-            }
-        });
-
         // Restore state if available
         if (savedInstanceState != null) {
             totalPizzas = savedInstanceState.getInt(KEY_TOTAL_PIZZAS)
