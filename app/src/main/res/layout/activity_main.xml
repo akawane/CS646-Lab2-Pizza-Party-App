@@ -86,6 +86,7 @@
 
     <Button
         android:id="@+id/calc_button"
+        android:theme="@style/MaterialButtonStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="21dp"

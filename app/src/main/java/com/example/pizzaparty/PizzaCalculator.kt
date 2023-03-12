@@ -1,13 +1,12 @@
-package com.example.pizzaparty
-
 import kotlin.math.ceil
 
 const val SLICES_PER_PIZZA = 8
 
 /**
- * PizzaCalculator: responsible for calculating the number of pizzas required
- * @property partySize denotes No.of people to be considered for pizza
- * @property hungerLevel denotes how hungry level of person
+ * PizzaCalculator class responsible for calculating the number of pizzas required.
+ *
+ * @property partySize the number of people to be considered for pizza
+ * @property hungerLevel the hunger level of the party attendees
  */
 class PizzaCalculator(partySize: Int, var hungerLevel: HungerLevel) {
     var partySize = 0
@@ -19,6 +18,9 @@ class PizzaCalculator(partySize: Int, var hungerLevel: HungerLevel) {
         LIGHT(2), MEDIUM(3), RAVENOUS(4)
     }
 
+    /**
+     * Gets the total number of pizzas required based on party size and hunger level.
+     */
     val totalPizzas: Int
         get() {
             return ceil(partySize * hungerLevel.numSlices / SLICES_PER_PIZZA.toDouble()).toInt()
